@@ -1,0 +1,21 @@
+#ifndef BUILD_INFO_KNOWN
+#define BUILD_INFO_KNOWN
+
+#define VERSION "@Openfortress_VERSION_MAJOR@.@Openfortress_VERSION_MINOR@"
+
+#include <cstdlib>
+#include <string>
+
+#ifdef _WIN32
+#include <cdirect>
+#define MKDIR(path) _mkdir(path.c_str())
+#else
+#include <sys/stat.h>
+#define MKDIR(path) mkdir(path.c_str(),				\
+			  S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH)
+#endif 
+
+std::string user_config();
+std::string user_config_dir();
+
+#endif
