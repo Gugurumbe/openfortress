@@ -1,5 +1,6 @@
 #include "sfml_graphics.h"
 #include "build.h"
+#include <iostream>
 
 SfmlGraphics::SfmlGraphics(): 
   Graphics(), m_thread(&SfmlGraphics::loop, this), m_quit(false),
@@ -45,6 +46,7 @@ void SfmlGraphics::loop()
       done = m_quit;
       while(m_window && m_window->pollEvent(e))
 	{
+	  std::cout<<"Event !\n";
 	  switch(e.type)
 	    {
 	    case sf::Event::Closed:

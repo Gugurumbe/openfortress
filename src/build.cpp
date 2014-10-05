@@ -2,10 +2,10 @@
 
 std::string user_config_dir()
 {
-  std::string home = getenv("HOME");
-  if(home!="") return home + "/.openfortress/";
+  char * home = getenv("HOME");
+  if(home) return std::string(home) + "/.openfortress/";
   home = getenv("USERPROFILE");
-  if(home!="") return home + "/.openfortress/";
+  if(home) return std::string(home) + "/.openfortress/";
   return "";
 }
 

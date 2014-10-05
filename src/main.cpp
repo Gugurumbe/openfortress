@@ -33,9 +33,12 @@ int main(int argc, char * argv[])
   std::cout<<m<<std::endl;
   Window w(&m);
   w.open_window();
+  /*
   std::cout<<"Say something when you're done : ";
   std::string foo;
   std::cin>>foo;
   std::cout<<"Ok. Thanks.\n";
+  */
+  sf::sleep(sf::seconds(10));
   return 0;
 }

@@ -1,6 +1,7 @@
 #include "window.h"
 
 #include <iostream>
+#include <cstdlib>
 
 Window::Window(): SfmlGraphics(), m_dead(false)
 {
@@ -20,6 +21,6 @@ void Window::on_quit()
 }
  void Window::draw(sf::RenderWindow & w)
 {
-  w.clear();
+  w.clear(sf::Color(rand()%256, rand()%256, rand()%256));
   w.display();
 }

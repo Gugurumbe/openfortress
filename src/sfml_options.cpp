@@ -22,7 +22,7 @@ SfmlOptions::SfmlOptions():
 	  //3. resolution height
 	  std::string fs, w, h;
 	  str>>fs>>w>>h;
-	  if(str == "true") m_fullscreen = true;
+	  if(fs == "true") m_fullscreen = true;
 	  std::stringstream str_w(w);
 	  str_w>>m_w;
 	  std::stringstream str_h(h);
